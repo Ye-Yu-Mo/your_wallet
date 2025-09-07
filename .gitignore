@@ -181,6 +181,7 @@ xcuserdata/
 # Flutter specific
 .flutter-plugins
 .flutter-plugins-dependencies
+frontend/build/
 
 # macOS
 .DS_Store

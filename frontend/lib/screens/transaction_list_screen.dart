@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/transaction_provider.dart';
 import '../models/models.dart';
+import 'add_transaction_screen.dart';
 
 class TransactionListScreen extends StatefulWidget {
   const TransactionListScreen({super.key});
@@ -423,16 +424,18 @@ class _TransactionListScreenState extends State<TransactionListScreen> {
   }
 
   void _showAddTransactionDialog(BuildContext context) {
-    // TODO: 实现添加交易对话框
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('添加交易功能即将推出')),
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const AddTransactionScreen(),
+      ),
     );
   }
 
   void _editTransaction(BuildContext context, Transaction transaction) {
-    // TODO: 实现编辑交易对话框
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('编辑交易功能即将推出')),
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => AddTransactionScreen(editTransaction: transaction),
+      ),
     );
   }
 }
