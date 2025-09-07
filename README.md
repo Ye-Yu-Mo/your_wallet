@@ -56,15 +56,17 @@
 ## 项目结构
 
 ```
-crypto-accounting/
+your-wallet/
 ├── frontend/          # Flutter 前端应用
 │   ├── lib/
-│   │   ├── models/    # 数据模型
-│   │   ├── services/  # API服务
-│   │   ├── screens/   # 页面组件
-│   │   ├── widgets/   # 通用组件
-│   │   └── utils/     # 工具函数
-│   └── pubspec.yaml
+│   │   └── main.dart  # 应用入口
+│   ├── android/       # Android 平台支持
+│   ├── ios/          # iOS 平台支持
+│   ├── macos/        # macOS 桌面支持
+│   ├── linux/        # Linux 桌面支持
+│   ├── windows/      # Windows 桌面支持
+│   ├── web/          # Web 平台支持
+│   └── pubspec.yaml  # Flutter 依赖配置
 ├── backend/           # Rust 后端服务
 │   ├── src/
 │   │   ├── main.rs   # 入口文件
@@ -74,9 +76,10 @@ crypto-accounting/
 │   │   ├── db/       # 数据库操作
 │   │   └── utils/    # 工具函数
 │   ├── migrations/   # 数据库迁移
-│   └── Cargo.toml
+│   └── Cargo.toml    # Rust 依赖配置
 ├── docs/             # 项目文档
-└── scripts/          # 构建和部署脚本
+│   └── 开发流程文档.md
+└── README.md         # 项目说明
 ```
 
 ## 开发计划
@@ -119,13 +122,31 @@ crypto-accounting/
 ```bash
 cd backend
 cargo run
+# 服务将在 http://localhost:3000 启动
 ```
 
 ### 前端应用
+
+**桌面应用（推荐开发模式）：**
 ```bash
 cd frontend
 flutter pub get
-flutter run
+flutter run -d macos  # macOS
+flutter run -d linux  # Linux  
+flutter run -d windows # Windows
+```
+
+**移动应用：**
+```bash
+cd frontend
+flutter run -d android # Android
+flutter run -d ios     # iOS
+```
+
+**Web应用：**
+```bash
+cd frontend
+flutter run -d chrome  # Web浏览器
 ```
 
 ## 贡献指南
