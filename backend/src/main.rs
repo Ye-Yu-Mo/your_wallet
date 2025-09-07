@@ -6,16 +6,17 @@ use axum::{
 use tower_http::cors::CorsLayer;
 use std::net::SocketAddr;
 
-mod api;
-mod models;
-mod services;
-mod db;
-mod utils;
+// TODO: 模块暂时注释，待实现具体功能时启用
+// mod api;
+// mod models;  
+// mod services;
+// mod db;
+// mod utils;
 
 #[tokio::main]
 async fn main() {
     // 初始化日志
-    tracing_subscriber::init();
+    tracing_subscriber::fmt::init();
     
     // 构建路由
     let app = Router::new()
