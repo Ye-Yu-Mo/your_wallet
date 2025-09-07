@@ -83,7 +83,7 @@ class _MainScreenState extends State<MainScreen> {
             label: '交易',
           ),
           NavigationDestination(
-            icon: Icon(Icons.pie_chart_outlined),
+            icon: Icon(Icons.pie_chart),
             selectedIcon: Icon(Icons.pie_chart),
             label: '投资组合',
           ),
@@ -1162,7 +1162,7 @@ class PortfolioPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
-                              Icons.pie_chart_outlined,
+                              Icons.pie_chart,
                               size: 64,
                               color: colorScheme.primary,
                             ),
@@ -1732,7 +1732,7 @@ class _SettingsPageState extends State<SettingsPage> {
       case 'CNY':
         return '人民币 (¥)';
       case 'USD':
-        return '美元 ($)';
+        return '美元 (\$)';
       case 'EUR':
         return '欧元 (€)';
       default:

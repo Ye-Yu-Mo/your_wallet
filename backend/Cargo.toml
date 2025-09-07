@@ -26,6 +26,9 @@ uuid = { version = "1.0", features = ["v4", "serde"] }
 # Date and time
 chrono = { version = "0.4", features = ["serde"] }
 
+# Decimal numbers for financial calculations
+rust_decimal = { version = "1.37", features = ["serde"] }
+
 # HTTP client for exchange APIs
 reqwest = { version = "0.12", features = ["json"] }
 
